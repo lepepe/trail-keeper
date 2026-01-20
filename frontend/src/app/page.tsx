@@ -28,7 +28,7 @@ export default function Home() {
   const getTripTypeIcon = (type: TripType) => {
     switch (type) {
       case TripType.Kayak:
-        return <Image src="/Kayka.png" alt="Kayak" width={40} height={40} />;
+        return <Image src="/Kayak.png" alt="Kayak" width={40} height={40} />;
       case TripType.Hiking:
         return <Image src="/Hiking.png" alt="Hiking" width={40} height={40} />;
       default:
