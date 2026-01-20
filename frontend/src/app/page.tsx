@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { api, Trip, TripType } from '@/lib/api';
 import ThemeToggle from '@/components/ThemeToggle';
 
@@ -27,11 +28,11 @@ export default function Home() {
   const getTripTypeIcon = (type: TripType) => {
     switch (type) {
       case TripType.Kayak:
-        return '🚣';
+        return <Image src="/Kayka.png" alt="Kayak" width={40} height={40} />;
       case TripType.Hiking:
-        return '🥾';
+        return <Image src="/Hiking.png" alt="Hiking" width={40} height={40} />;
       default:
-        return '🏕️';
+        return <Image src="/General.png" alt="General" width={40} height={40} />;
     }
   };
 
@@ -39,7 +40,7 @@ export default function Home() {
     <main className="container mx-auto px-4 py-8">
       <header className="mb-8 flex items-center justify-between">
         <div>
-          <h1 className="text-4xl font-bold text-blue-600 dark:text-blue-400">Water Trail</h1>
+          <h1 className="text-4xl font-bold text-blue-600 dark:text-blue-400">Trail Keeper</h1>
           <p className="text-gray-600 dark:text-gray-400 mt-2">Plan and track your outdoor adventures</p>
         </div>
         <ThemeToggle />
@@ -68,7 +69,7 @@ export default function Home() {
           <Link href={`/trips/${trip.id}`} key={trip.id}>
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg dark:shadow-gray-900/50 transition-shadow p-6 cursor-pointer border border-transparent dark:border-gray-700">
               <div className="flex items-center gap-3 mb-3">
-                <span className="text-3xl">{getTripTypeIcon(trip.type)}</span>
+                {getTripTypeIcon(trip.type)}
                 <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100">{trip.name}</h2>
               </div>
               {trip.description && (

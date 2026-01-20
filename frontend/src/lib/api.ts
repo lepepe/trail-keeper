@@ -1,9 +1,9 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
 export enum TripType {
-  Kayak = 'Kayak',
-  Hiking = 'Hiking',
-  General = 'General'
+  Kayak = 0,
+  Hiking = 1,
+  General = 2
 }
 
 export interface Trip {

@@ -4,7 +4,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Water Trail - Trip Planner',
-  description: 'Plan and track your kayak camping trips',
+  description: 'Plan and track your kayak camping, trips and outdoors activities.',
 };
 
 export default function RootLayout({
